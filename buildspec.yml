@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies..."
+      - apt-get update -y  
+
+  build:
+    commands:
+      - echo "Building the project..."
+      - mkdir -p /var/www/html
+      - cp -r * /var/www/html/
+
+  post_build:
+    commands:
+      - echo "Build completed successfully!"
+
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: no
